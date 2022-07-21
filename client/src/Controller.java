@@ -35,11 +35,11 @@ class Controller {
         bossPlace.enemy = new BreakDancers("Boss Villain", 15);
     }
 
-    public String look(Location currentLocation, String direction) {
+    public void look(Location currentLocation, String direction) {
         if (currentLocation.nextLocation.keySet().contains(direction)) {
-            return currentLocation.nextLocation.get(direction).description;
+            System.out.println(currentLocation.nextLocation.get(direction).description);
         } else {
-            return "Location not found";
+            System.out.println("Location not found");
         }
     }
 
