@@ -31,8 +31,10 @@ public class Instruction {
         System.out.println();
         System.out.println("Let me give you a few helpful commands to get your started..");
         TimeUnit.MILLISECONDS.sleep(1500);
-        System.out.println();
-        System.out.println("Commands: \n To move = go [direciton] \n To get items = get [item] \n To use items = use [item]");
+        System.out.println("\033[1;35m");
+        System.out.println("Commands: \n To move = go [direction] \n To get items = get [item] \n To use items = use [item] " +
+                "\n To look = look [direction] \n Exit Game = quit");
+        System.out.println("\033[0m");
         TimeUnit.MILLISECONDS.sleep(1500);
         System.out.println();
         System.out.println("Ready? let's go!");
