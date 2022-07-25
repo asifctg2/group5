@@ -41,6 +41,7 @@ public class Game {
                     break;
 
                 case "quit":
+
                 case "exit":
                     System.out.println("Thanks for playing Soul Stepper");
                     return;
