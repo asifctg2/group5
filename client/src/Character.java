@@ -1,3 +1,5 @@
+package client.src;
+
 public abstract class Character {
 
         String name;
@@ -9,10 +11,6 @@ public abstract class Character {
     }
 
     public abstract void decreaseHealth();
-
-    public abstract int getHealth();
-
-    public abstract String getName();
 
 
 }

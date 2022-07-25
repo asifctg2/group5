@@ -1,3 +1,5 @@
+package client.src;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -6,7 +8,7 @@ import java.util.Map;
 public class Location {
     String name;
     String description;
-    ArrayList items = new ArrayList<>();
+    ArrayList<String> items = new ArrayList<>();
     HashMap<String, Location> nextLocation = new HashMap<String, Location>();
     public BreakDancers enemy;
 
@@ -36,8 +38,8 @@ public class Location {
         this.description = description;
     }
 
-    public ArrayList getItems() {
-        return items;
+    public void getItems() {
+        System.out.println("You see a: " + items.toString());
     }
 
     public void setItems(ArrayList items) {

@@ -1,9 +1,11 @@
+package client.src;
+
 import java.util.ArrayList;
 
 class Controller {
 
     Location mainStreet = new Location("Main Street");
-    Location trebelParkWay = new Location("Trebel Parkway");
+    Location trebleParkWay = new Location("Treble Parkway");
     Location baseCircle = new Location("Base Circle");
     Location riffRunWay = new Location("Riff Runway");
     Location bossPlace = new Location("Boss House");
@@ -13,24 +15,24 @@ class Controller {
     public Controller() {
         currentLocation = mainStreet;
         mainStreet.addNextLocation("north", baseCircle);
-        mainStreet.setDescription("Place holder for mainStreet");
+        mainStreet.setDescription("You see main street");
 
         baseCircle.addNextLocation("south", mainStreet);
         baseCircle.addNextLocation("west", riffRunWay);
-        baseCircle.addNextLocation("east", trebelParkWay);
-        baseCircle.setDescription("Place holder for baseCircle");
+        baseCircle.addNextLocation("east", trebleParkWay);
+        baseCircle.setDescription("You see lights and you hear music");
 
-        trebelParkWay.addNextLocation("west", baseCircle);
-        trebelParkWay.addNextLocation("north", bossPlace);
-        trebelParkWay.addItem("Health Kit");
-        trebelParkWay.enemy = new BreakDancers("Trebel Villain", 10);
-        trebelParkWay.setDescription("Place holder for trebelParWay");
+        trebleParkWay.addNextLocation("west", baseCircle);
+        trebleParkWay.addNextLocation("north", bossPlace);
+        trebleParkWay.addItem("health kit");
+        trebleParkWay.enemy = new BreakDancers("Treble Villain", 10);
+        trebleParkWay.setDescription("You see flashing lights and it peaks your interest.");
 
         riffRunWay.addNextLocation("east", baseCircle);
         riffRunWay.addNextLocation("north", bossPlace);
-        riffRunWay.addItem("Health Kit");
+        riffRunWay.addItem("health kit");
         riffRunWay.enemy = new BreakDancers("Riff Runway Villain", 7);
-        riffRunWay.setDescription("Place holder for riffRunWay");
+        riffRunWay.setDescription("You see a path going west");
 
         bossPlace.enemy = new BreakDancers("Boss Villain", 15);
     }
