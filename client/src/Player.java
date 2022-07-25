@@ -1,6 +1,11 @@
+package client.src;
+
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Player extends Character {
+
+    ArrayList<String> inventory = new ArrayList<>();
 
     public Player(String name, int health) {
         super(name, health);
@@ -22,13 +27,31 @@ public class Player extends Character {
         return random.nextInt(max - min + 1) + min;
     }
 
-    @Override
+    public void addItem(String item){
+        inventory.add(item);
+    }
+
+    public void removeItem(String item){
+        inventory.remove(item);
+    }
+
+    public void showInventory() {
+        System.out.println("Your inventory: " + inventory.toString());
+    }
+
     public int getHealth() {
         return this.health;
     }
 
-    @Override
     public String getName() {
         return this.name;
     }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+
+
+
 }

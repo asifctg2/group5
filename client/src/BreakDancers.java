@@ -1,3 +1,5 @@
+package client.src;
+
 import javax.naming.Name;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class BreakDancers extends Character {
         return random.nextInt(max - min + 1) + min;
     }
 
-    public void enemyDance(Character Player) {
+    public void enemyDance(Player Player) {
         List<String> danceMoves = new ArrayList<>(5);
         danceMoves.add("Windmill");
         danceMoves.add("Flare");
@@ -56,7 +58,7 @@ public class BreakDancers extends Character {
     }
 
 
-    @Override
+
     public int getHealth() {
         return health;
     }
