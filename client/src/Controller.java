@@ -41,21 +41,25 @@ class Controller {
         riffRunWay.addEnemy(swingDancer);
         riffRunWay.setDescription("You see a path going west");
 
+
         seminary.addNextLocation("south", riffRunWay);
         seminary.addNextLocation("north", bossPlace);
         seminary.addNextLocation("east", wheatLand);
+        seminary.setDescription("The north looks dark but there is more rooms going east");
         seminary.addEnemy(crunkDancer);
-
+      
 
         wheatLand.addNextLocation("west", seminary);
         wheatLand.addNextLocation("south", baseCircle);
         wheatLand.addNextLocation("north", bossPlace);
         wheatLand.addNextLocation("east", thePalace);
+        wheatLand.setDescription("North seems dark. There is interesting things happening going east and west");
 
         thePalace.addNextLocation("west", wheatLand);
         thePalace.addNextLocation("south", trebleParkWay);
         thePalace.addNextLocation("north", bossPlace);
         thePalace.addItem("health kit");
+        thePalace.setDescription("North seems dark. You can head west where there is more light.");
         thePalace.addEnemy(salsaDancer);
 
 
