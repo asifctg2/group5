@@ -37,23 +37,26 @@ class Controller {
         riffRunWay.addNextLocation("north", seminary);
         riffRunWay.addItem("health kit");
         riffRunWay.enemy = new BreakDancers("Riff Runway Villain", 7);
-        riffRunWay.setDescription("You see a path going west");
+        riffRunWay.setDescription("You see a path going east");
 
         seminary.addNextLocation("south", riffRunWay);
         seminary.addNextLocation("north", bossPlace);
         seminary.addNextLocation("east", wheatLand);
         seminary.enemy = new BreakDancers("Seminary Vilain", 10);
+        seminary.setDescription("The north looks dark but there is more rooms going east");
 
         wheatLand.addNextLocation("west", seminary);
         wheatLand.addNextLocation("south", baseCircle);
         wheatLand.addNextLocation("north", bossPlace);
         wheatLand.addNextLocation("east", thePalace);
+        wheatLand.setDescription("North seems dark. There is interesting things happening going east and west");
 
         thePalace.addNextLocation("west", wheatLand);
         thePalace.addNextLocation("south", trebleParkWay);
         thePalace.addNextLocation("north", bossPlace);
         thePalace.addItem("health kit");
         thePalace.enemy = new BreakDancers("The Palace Villain", 7);
+        thePalace.setDescription("North seems dark. You can head west where there is more light.");
 
         bossPlace.enemy = new BreakDancers("Boss Villain", 15);
     }
