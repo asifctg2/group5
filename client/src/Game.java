@@ -1,7 +1,3 @@
-package client.src;
-
-import client.src.Instruction;
-
 import java.util.Locale;
 import java.util.Scanner;
 

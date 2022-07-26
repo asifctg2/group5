@@ -1,5 +1,3 @@
-package client.src;
-
 import javax.naming.Name;
 import java.util.ArrayList;
 import java.util.List;

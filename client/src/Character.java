@@ -1,4 +1,4 @@
-package client.src;
+
 
 public abstract class Character {
 
