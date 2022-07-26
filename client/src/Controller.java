@@ -12,6 +12,7 @@ class Controller {
     Location wheatLand = new Location("Wheat Land");
     Location thePalace = new Location("The Palace");
     Location bossPlace = new Location("Boss House");
+    Character breakDancer = new BreakDancers("breakdancer", 100);
     Location currentLocation;
 
 
@@ -28,7 +29,8 @@ class Controller {
         trebleParkWay.addNextLocation("west", baseCircle);
         trebleParkWay.addNextLocation("north", thePalace);
         trebleParkWay.addItem("health kit");
-        trebleParkWay.enemy = new BreakDancers("Treble Villain", 10);
+//        trebleParkWay.enemy = new BreakDancers("Treble Villain", 10);
+        trebleParkWay.addEnemy(breakDancer);
         trebleParkWay.setDescription("You see flashing lights and it peaks your interest.");
 
         riffRunWay.addNextLocation("east", baseCircle);

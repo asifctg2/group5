@@ -9,8 +9,9 @@ public class Location {
     String name;
     String description;
     ArrayList<String> items = new ArrayList<>();
+    ArrayList<Character> enemies = new ArrayList<>();
     HashMap<String, Location> nextLocation = new HashMap<String, Location>();
-    public BreakDancers enemy;
+    BreakDancers enemy;
 
 
     public Location(String name, String description) {
@@ -48,6 +49,10 @@ public class Location {
 
     public void addItem(String item){
         this.items.add(item);
+    }
+
+    public void addEnemy(Character character){
+        this.enemies.add(character);
     }
 
     public void addNextLocation(String direction, Location location){
