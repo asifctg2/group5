@@ -36,92 +36,100 @@ public class Player extends Character {
         System.out.println();
         while (enemy.getHealth() > 0) {
 
-            System.out.println("" +
-                    "Pick a number to select a dance move:\n" +
-                    "            1. The Hustle\n" +
-                    "            2. Bus Stop\n" +
-                    "            3. Michael Jackson Robot\n" +
-                    "            4. Funky Chicken");
-            System.out.println();
+            if (soulStepper.getHealth() > 0) {
+
+                System.out.println("" +
+                        "Pick a number to select a dance move:\n" +
+                        "            1. The Hustle\n" +
+                        "            2. Bus Stop\n" +
+                        "            3. Michael Jackson Robot\n" +
+                        "            4. Funky Chicken");
+                System.out.println();
 
 
-            int userChoice = scanner.nextInt();
+                int userChoice = scanner.nextInt();
 
-            switch (userChoice) {
-                case 1:
-                    System.out.println("Soulstepper hit em with the Hustle!");
-                    System.out.println();
-                    enemy.decreaseHealth();
-                    System.out.printf("%s felt the soul, and there current health is %s !", enemy.getName(), enemy.getHealth());
-                    System.out.println();
-                    System.out.println();
-                    if (enemy.getHealth() > 0){
-                        enemy.dance(soulStepper, enemy);
-                    } else {
-                        System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                switch (userChoice) {
+                    case 1:
+                        System.out.println("Soulstepper hit em with the Hustle!");
+                        System.out.println();
+                        enemy.decreaseHealth();
+                        System.out.printf("%s felt the soul, and there current health is %s !", enemy.getName(), enemy.getHealth());
                         System.out.println();
                         System.out.println();
-                    }
-                    break;
+                        if (enemy.getHealth() > 0) {
+                            enemy.dance(soulStepper, enemy);
+                        } else {
+                            System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                            System.out.println();
+                            System.out.println();
+                        }
+                        break;
 
-                case 2:
-                    System.out.println("Soulstepper broke out the Bus Stop!");
-                    System.out.println();
-                    enemy.decreaseHealth();
-                    System.out.printf("%s got hit by the bus, and there current health is %s !", enemy.getName(), enemy.getHealth());
-                    System.out.println();
-                    System.out.println();
-                    if (enemy.getHealth() > 0){
-                        enemy.dance(soulStepper, enemy);
-                    } else {
-                        System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                    case 2:
+                        System.out.println("Soulstepper broke out the Bus Stop!");
+                        System.out.println();
+                        enemy.decreaseHealth();
+                        System.out.printf("%s got hit by the bus, and there current health is %s !", enemy.getName(), enemy.getHealth());
                         System.out.println();
                         System.out.println();
-                    }
-                    break;
+                        if (enemy.getHealth() > 0) {
+                            enemy.dance(soulStepper, enemy);
+                        } else {
+                            System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                            System.out.println();
+                            System.out.println();
+                        }
+                        break;
 
-                case 3:
-                    System.out.println("Soulstepper took it back to the 70's with the Michael Jackson Robot!");
-                    System.out.println();
-                    enemy.decreaseHealth();
-                    System.out.printf("%s got hit by little Michael's spirit, and there current health is %s !", enemy.getName(), enemy.getHealth());
-                    System.out.println();
-                    System.out.println();
-                    if (enemy.getHealth() > 0){
-                        enemy.dance(soulStepper, enemy);
-                    } else {
-                        System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                    case 3:
+                        System.out.println("Soulstepper took it back to the 70's with the Michael Jackson Robot!");
+                        System.out.println();
+                        enemy.decreaseHealth();
+                        System.out.printf("%s got hit by little Michael's spirit, and there current health is %s !", enemy.getName(), enemy.getHealth());
                         System.out.println();
                         System.out.println();
-                    }
-                    break;
+                        if (enemy.getHealth() > 0) {
+                            enemy.dance(soulStepper, enemy);
+                        } else {
+                            System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                            System.out.println();
+                            System.out.println();
+                        }
+                        break;
 
-                case 4:
-                    System.out.println("Soulstepper was feeling a little weird and did the Funky Chicken!");
-                    System.out.println();
-                    enemy.decreaseHealth();
-                    System.out.printf("%s got pecked by the chicken, and there current health is %s !", enemy.getName(), enemy.getHealth());
-                    System.out.println();
-                    System.out.println();
-                    if (enemy.getHealth() > 0){
-                        enemy.dance(soulStepper, enemy);
-                    } else {
-                        System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                    case 4:
+                        System.out.println("Soulstepper was feeling a little weird and did the Funky Chicken!");
+                        System.out.println();
+                        enemy.decreaseHealth();
+                        System.out.printf("%s got pecked by the chicken, and there current health is %s !", enemy.getName(), enemy.getHealth());
                         System.out.println();
                         System.out.println();
-                    }
-                    break;
+                        if (enemy.getHealth() > 0) {
+                            enemy.dance(soulStepper, enemy);
+                        } else {
+                            System.out.printf("You defeated %s with your soul and can move on", enemy.getName());
+                            System.out.println();
+                            System.out.println();
+                        }
+                        break;
 
-                default:
-                    System.out.println("Please enter a number 1-4");
-                    System.out.println();
-                    System.out.println();
+                    default:
+                        System.out.println("Please enter a number 1-4");
+                        System.out.println();
+                        System.out.println();
+                }
+            } else {
+                System.out.println("Soul Stepper was defeated!");
+                System.out.println();
+                System.out.println("GAME OVER");
+                System.exit(0);
             }
         }
     }
 
     public int getHealth() {
-        return this.health;
+        return Math.max(this.health, 0);
     }
 
     public String getName() {

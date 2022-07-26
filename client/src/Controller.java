@@ -12,7 +12,10 @@ class Controller {
     Location wheatLand = new Location("Wheat Land");
     Location thePalace = new Location("The Palace");
     Location bossPlace = new Location("Boss House");
-    Character breakDancer = new BreakDancers("breakdancer", 100);
+    Character breakDancer = new BreakDancers("Break Dancer Tyler", 100);
+    Character crunkDancer = new CrunkDancer("Crunk Dancer Nathan", 100);
+    Character salsaDancer = new SalsaDancer("Salsa Dancer Antonio", 100);
+    Character swingDancer = new SwingDancer("Swing Dancer Jimmy", 100);
     Location currentLocation;
 
 
@@ -29,20 +32,20 @@ class Controller {
         trebleParkWay.addNextLocation("west", baseCircle);
         trebleParkWay.addNextLocation("north", thePalace);
         trebleParkWay.addItem("health kit");
-//        trebleParkWay.enemy = new BreakDancers("Treble Villain", 10);
         trebleParkWay.addEnemy(breakDancer);
         trebleParkWay.setDescription("You see flashing lights and it peaks your interest.");
 
         riffRunWay.addNextLocation("east", baseCircle);
         riffRunWay.addNextLocation("north", seminary);
         riffRunWay.addItem("health kit");
-        riffRunWay.enemy = new BreakDancers("Riff Runway Villain", 7);
+        riffRunWay.addEnemy(swingDancer);
         riffRunWay.setDescription("You see a path going west");
 
         seminary.addNextLocation("south", riffRunWay);
         seminary.addNextLocation("north", bossPlace);
         seminary.addNextLocation("east", wheatLand);
-        seminary.enemy = new BreakDancers("Seminary Vilain", 10);
+        seminary.addEnemy(crunkDancer);
+
 
         wheatLand.addNextLocation("west", seminary);
         wheatLand.addNextLocation("south", baseCircle);
@@ -53,9 +56,9 @@ class Controller {
         thePalace.addNextLocation("south", trebleParkWay);
         thePalace.addNextLocation("north", bossPlace);
         thePalace.addItem("health kit");
-        thePalace.enemy = new BreakDancers("The Palace Villain", 7);
+        thePalace.addEnemy(salsaDancer);
 
-        bossPlace.enemy = new BreakDancers("Boss Villain", 15);
+
     }
 
     public void look(Location currentLocation, String direction) {

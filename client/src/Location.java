@@ -11,7 +11,6 @@ public class Location {
     ArrayList<String> items = new ArrayList<>();
     ArrayList<Character> enemies = new ArrayList<>();
     HashMap<String, Location> nextLocation = new HashMap<String, Location>();
-    BreakDancers enemy;
 
 
     public Location(String name, String description) {
