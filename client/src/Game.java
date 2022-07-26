@@ -12,7 +12,7 @@ public class Game {
 //        instruction.showInstruction();
 
         Controller controller = new Controller();
-        Player soulStepper = new Player("SoulStepper", 30);
+        Player soulStepper = new Player("SoulStepper", 100);
         Scanner scanner = new Scanner(System.in);
         Items item = new Items();
         while (true) {
@@ -38,6 +38,10 @@ public class Game {
 
                 case "go":
                     controller.go(controller.currentLocation, arrayChoice[1]);
+                    if (controller.currentLocation.enemies.size() > 0) {
+                        soulStepper.dance(controller.currentLocation.enemies.get(0), soulStepper);
+                        controller.currentLocation.enemies.remove(0);
+                    }
                     break;
 
                 case "quit":

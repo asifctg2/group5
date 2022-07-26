@@ -12,19 +12,10 @@ public class BreakDancers extends Character {
         super(name, health);
     }
 
+
+
     @Override
-    public void decreaseHealth() {
-        this.health = getHealth() - randomInt(15, 30);
-    }
-
-    ;
-
-    public int randomInt(int min, int max) {
-        Random random = new Random();
-        return random.nextInt(max - min + 1) + min;
-    }
-
-    public void enemyDance(Player Player) {
+    public void dance(Character soulStepper, Character enemy) {
         List<String> danceMoves = new ArrayList<>(5);
         danceMoves.add("Windmill");
         danceMoves.add("Flare");
@@ -37,30 +28,41 @@ public class BreakDancers extends Character {
 
         if (number == 0) {
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(0));
-            Player.decreaseHealth();
-            System.out.printf("Soulsteppers current health is %s", Player.getHealth());
-
+            soulStepper.decreaseHealth();
+            System.out.println();
+            System.out.printf("Soulsteppers current health is %s", soulStepper.getHealth());
+            System.out.println();
+            System.out.println();
         } else if (number == 1) {
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(1));
-            Player.decreaseHealth();
-            System.out.printf("Soulsteppers current health is %s", Player.getHealth());
+            soulStepper.decreaseHealth();
+            System.out.println();
+            System.out.printf("Soulsteppers current health is %s", soulStepper.getHealth());
+            System.out.println();
+            System.out.println();
         } else if (number == 2) {
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(2));
-            Player.decreaseHealth();
-            System.out.printf("Soulsteppers current health is %s", Player.getHealth());
+            soulStepper.decreaseHealth();
+            System.out.println();
+            System.out.printf("Soulsteppers current health is %s", soulStepper.getHealth());
+            System.out.println();
+            System.out.println();
         } else if (number == 3) {
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(3));
-            Player.decreaseHealth();
-            System.out.printf("Soulsteppers current health is %s", Player.getHealth());
+            soulStepper.decreaseHealth();
+            System.out.println();
+            System.out.printf("Soulsteppers current health is %s", soulStepper.getHealth());
+            System.out.println();
+            System.out.println();
         } else {
             System.out.printf("The %s tried hit you with a move but missed!", getName());
+            System.out.println();
+            System.out.println();
         }
     }
 
-
-
     public int getHealth() {
-        return health;
+        return Math.max(this.health, 0);
     }
 
     public String getName() {
