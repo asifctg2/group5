@@ -1,4 +1,4 @@
-package client.src;
+
 
 import java.util.ArrayList;
 
@@ -8,6 +8,9 @@ class Controller {
     Location trebleParkWay = new Location("Treble Parkway");
     Location baseCircle = new Location("Base Circle");
     Location riffRunWay = new Location("Riff Runway");
+    Location seminary = new Location("Seminary Street");
+    Location wheatLand = new Location("Wheat Land");
+    Location thePalace = new Location("The Palace");
     Location bossPlace = new Location("Boss House");
     Location currentLocation;
 
@@ -23,16 +26,32 @@ class Controller {
         baseCircle.setDescription("You see lights and you hear music");
 
         trebleParkWay.addNextLocation("west", baseCircle);
-        trebleParkWay.addNextLocation("north", bossPlace);
+        trebleParkWay.addNextLocation("north", thePalace);
         trebleParkWay.addItem("health kit");
         trebleParkWay.enemy = new BreakDancers("Treble Villain", 10);
         trebleParkWay.setDescription("You see flashing lights and it peaks your interest.");
 
         riffRunWay.addNextLocation("east", baseCircle);
-        riffRunWay.addNextLocation("north", bossPlace);
+        riffRunWay.addNextLocation("north", seminary);
         riffRunWay.addItem("health kit");
         riffRunWay.enemy = new BreakDancers("Riff Runway Villain", 7);
         riffRunWay.setDescription("You see a path going west");
+
+        seminary.addNextLocation("south", riffRunWay);
+        seminary.addNextLocation("north", bossPlace);
+        seminary.addNextLocation("east", wheatLand);
+        seminary.enemy = new BreakDancers("Seminary Vilain", 10);
+
+        wheatLand.addNextLocation("west", seminary);
+        wheatLand.addNextLocation("south", baseCircle);
+        wheatLand.addNextLocation("north", bossPlace);
+        wheatLand.addNextLocation("east", thePalace);
+
+        thePalace.addNextLocation("west", wheatLand);
+        thePalace.addNextLocation("south", trebleParkWay);
+        thePalace.addNextLocation("north", bossPlace);
+        thePalace.addItem("health kit");
+        thePalace.enemy = new BreakDancers("The Palace Villain", 7);
 
         bossPlace.enemy = new BreakDancers("Boss Villain", 15);
     }
