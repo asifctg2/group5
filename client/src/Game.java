@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Game {
     public void play() throws InterruptedException {
         Instruction instruction = new Instruction();
-//        instruction.showInstruction();
+        instruction.showInstruction();
 
         Controller controller = new Controller();
         Player soulStepper = new Player("SoulStepper", 100);
@@ -35,6 +35,10 @@ public class Game {
                 case "go":
                     controller.go(controller.currentLocation, arrayChoice[1]);
                     if (controller.currentLocation.enemies.size() > 0) {
+                        if (controller.currentLocation.enemies.contains(controller.boss)){
+                            soulStepper.bossDance(controller.currentLocation.enemies.get(0), soulStepper);
+                            controller.currentLocation.enemies.remove(0);
+                        }
                         soulStepper.dance(controller.currentLocation.enemies.get(0), soulStepper);
                         controller.currentLocation.enemies.remove(0);
                     }
@@ -47,7 +51,7 @@ public class Game {
                     return;
 
                 case "get":
-                    if (controller.currentLocation.items.size() > 0) {
+                    if (controller.currentLocation.items.contains(arrayChoice[1])) {
                         controller.removeItem(arrayChoice[1]);
                         soulStepper.addItem(arrayChoice[1]);
                     } else {

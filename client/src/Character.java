@@ -23,7 +23,11 @@ public abstract class Character {
         return random.nextInt(max - min + 1) + min;
     }
 
-    public abstract void dance (Character soulStepper, Character enemy);
+    public abstract void beginningDialogue() throws InterruptedException;
+
+    public abstract void endingDialogue() throws InterruptedException;
+
+    public abstract void dance (Character soulStepper, Character enemy) throws InterruptedException;
 
     public abstract String getName();
 

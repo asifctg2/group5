@@ -2,6 +2,7 @@ import javax.naming.Name;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class CrunkDancer extends Character {
 
@@ -10,6 +11,84 @@ public class CrunkDancer extends Character {
         super(name, health);
     }
 
+    @Override
+    public void beginningDialogue() throws InterruptedException {
+        System.out.println(".....");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: *performs dance move 'show-off'*");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("*The crowd roars*");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.printf("Soulstepper: Hey kid, you seem to be the main attraction here.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: Seems like it right, worked my butt of to get to this point.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Soulstepper: I respect that, hard work pays off.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: You seem like you got some soul in you, I still got some time before I have to head out. You wanna face off?");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("SoulStepper: Sure, I can spare some time, plus it seems like this crowd wants to see more.");
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println();
+        System.out.println("Nathan: That's what I'm talking about, let's get it.");
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.println();
+        System.out.println("ALERT!!");
+        System.out.println();
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.println("ALERT!!");
+        System.out.println();
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.printf("%s challenges you to a dance off", this.getName());
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(1500);
+        System.out.println();
+        System.out.println("Ready? Let's dance!");
+        System.out.println();
+        System.out.println();
+    }
+
+    @Override
+    public void endingDialogue() throws InterruptedException {
+        System.out.println(".....");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("* crowd erupts in applause *");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: Woah dude, you taught me something tonight. You really don't mess around");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Soulstepper: Haha so I've been told");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: Only other person to defeat me in a face-off of like this is that snake LoVibe. The guy made me look like a fool out here.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Soulstepper: .....");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: I've been working hard ever since to challenge him again and earn my respect back. But it seems I still have a long way to go.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Soulstepper: Keep, working kid. You'll get there, and when you do I'll be there to see it. For now, I have somewhere I have to be. Peace kid.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: Peace.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.printf("You defeated %s with your soul and can now move on.", this.getName());
+        System.out.println();
+    }
 
 
     @Override
