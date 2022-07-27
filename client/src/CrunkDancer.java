@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class BreakDancers extends Character {
+public class CrunkDancer extends Character {
 
 
-    public BreakDancers(String name, int health) {
+    public CrunkDancer(String name, int health) {
         super(name, health);
     }
 
@@ -15,44 +15,29 @@ public class BreakDancers extends Character {
     public void beginningDialogue() throws InterruptedException {
         System.out.println(".....");
         System.out.println();
-        TimeUnit.MILLISECONDS.sleep(1500);
-        System.out.println("* break dancers dancing *");
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: *performs dance move 'show-off'*");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Soulstepper: Those are some smooth moves there youngin.");
+        System.out.println("*The crowd roars*");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Tyler: Thanks gramps, these moves aren't for the we....... wait, you're Levon Soulstepper???");
+        System.out.printf("Soulstepper: Hey kid, you seem to be the main attraction here.");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Soulstepper: Ha ha, glad people still recognize me");
+        System.out.println("Nathan: Seems like it right, worked my butt of to get to this point.");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Tyler: Yooooo, I used to study all your moves when I was a kid, you use to kill that funky chicken!");
+        System.out.println("Soulstepper: I respect that, hard work pays off.");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Tyler: I hate what happened between you and that guy LoVibe, all the real dancers in town still know you're still the Supreme Stepper!");
+        System.out.println("Nathan: You seem like you got some soul in you, I still got some time before I have to head out. You wanna face off?");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("SoulStepper: Sure, I can spare some time, plus it seems like this crowd wants to see more.");
         TimeUnit.MILLISECONDS.sleep(2000);
         System.out.println();
-        System.out.println("Soulstepper: Thanks kid, but I'm on a journey right now to go get my title back because I feel the same way.");
-        TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println();
-        System.out.println("Tyler: Word? Well you got nothing but support and love from me and the rest of the break dancing community here.");
-        TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println();
-        System.out.println("Tyler: But there is one thing that I would love to do before you go...");
-        TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println();
-        System.out.println("SoulStepper: Yeah, what is it?");
-        TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println();
-        System.out.println("Tyler: Let's have a dance off! It's been my dream to dance against you since I was a kid.");
-        TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println();
-        System.out.println("SoulStepper: Sure kid, you're on but I must warn you that I'm not that same dude you saw all those years ago.");
-        TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println();
-        System.out.println("Tyler: Don't worry, about me stepper I've been waiting on this my whole life!");
+        System.out.println("Nathan: That's what I'm talking about, let's get it.");
         TimeUnit.MILLISECONDS.sleep(1000);
         System.out.println();
         System.out.println("ALERT!!");
@@ -77,22 +62,28 @@ public class BreakDancers extends Character {
         System.out.println(".....");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Tyler: *heavy panting* they don't call you the Supreme stepper for nothing.");
+        System.out.println("* crowd erupts in applause *");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("SoulStepper: Haha I might've went a little harder than I should.");
+        System.out.println("Nathan: Woah dude, you taught me something tonight. You really don't mess around");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Tyler: Hahaha no worries man, this was awesome. Do me a favor though...");
+        System.out.println("Soulstepper: Haha so I've been told");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Soulstepper: What's that?");
+        System.out.println("Nathan: Only other person to defeat me in a face-off of like this is that snake LoVibe. The guy made me look like a fool out here.");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("Tyler: Whoop LoVibe's ass.");
+        System.out.println("Soulstepper: .....");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
-        System.out.println("SoulStepper: You got it kid.");
+        System.out.println("Nathan: I've been working hard ever since to challenge him again and earn my respect back. But it seems I still have a long way to go.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Soulstepper: Keep, working kid. You'll get there, and when you do I'll be there to see it. For now, I have somewhere I have to be. Peace kid.");
+        System.out.println();
+        TimeUnit.MILLISECONDS.sleep(2000);
+        System.out.println("Nathan: Peace.");
         System.out.println();
         TimeUnit.MILLISECONDS.sleep(2000);
         System.out.printf("You defeated %s with your soul and can now move on.", this.getName());
@@ -101,19 +92,18 @@ public class BreakDancers extends Character {
 
 
     @Override
-    public void dance(Character soulStepper, Character enemy) throws InterruptedException {
+    public void dance(Character soulStepper, Character enemy) {
         List<String> danceMoves = new ArrayList<>(5);
-        danceMoves.add("Windmill");
-        danceMoves.add("Flare");
-        danceMoves.add("Back Spin");
-        danceMoves.add("Head Spin");
-        danceMoves.add("Jack Hammer");
+        danceMoves.add("Kill-off");
+        danceMoves.add("Chest Pop");
+        danceMoves.add("Jab");
+        danceMoves.add("Buck");
+        danceMoves.add("Get-off");
 
         int number = randomInt(0, 4);
 
 
         if (number == 0) {
-            System.out.println();
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(0));
             soulStepper.decreaseHealth();
             System.out.println();
@@ -121,7 +111,6 @@ public class BreakDancers extends Character {
             System.out.println();
             System.out.println();
         } else if (number == 1) {
-            System.out.println();
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(1));
             soulStepper.decreaseHealth();
             System.out.println();
@@ -129,7 +118,6 @@ public class BreakDancers extends Character {
             System.out.println();
             System.out.println();
         } else if (number == 2) {
-            System.out.println();
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(2));
             soulStepper.decreaseHealth();
             System.out.println();
@@ -137,7 +125,6 @@ public class BreakDancers extends Character {
             System.out.println();
             System.out.println();
         } else if (number == 3) {
-            System.out.println();
             System.out.printf("The %s hit you with a %s", getName(), danceMoves.get(3));
             soulStepper.decreaseHealth();
             System.out.println();
@@ -145,7 +132,6 @@ public class BreakDancers extends Character {
             System.out.println();
             System.out.println();
         } else {
-            System.out.println();
             System.out.printf("The %s tried hit you with a move but missed!", getName());
             System.out.println();
             System.out.println();
