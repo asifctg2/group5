@@ -8,7 +8,7 @@ class BreakDancersTest {
 
 
     @Test
-    void dance() {
+    void dance() throws InterruptedException {
         Character soulStepper = new Player("Daniel", 100);
         Character enemy = new BreakDancers("enemyTest", 100);
 

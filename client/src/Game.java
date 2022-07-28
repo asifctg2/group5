@@ -28,11 +28,13 @@ public class Game {
             String choice = scanner.nextLine().toLowerCase();
             String[] arrayChoice = choice.split(" ", 2);
             switch (arrayChoice[0]) {
-                case "look":
+                case "look": case "glance": case "peep": case "peek": case "see":
+                case "view":
                     controller.look(controller.currentLocation, arrayChoice[1]);
                     break;
 
-                case "go":
+                case "go": case "move": case "proceed": case "advace": case "progress":
+                    case "pass": case "walk":
                     controller.go(controller.currentLocation, arrayChoice[1]);
                     if (controller.currentLocation.enemies.size() > 0) {
                         if (controller.currentLocation.enemies.contains(controller.boss)){
@@ -44,13 +46,12 @@ public class Game {
                     }
                     break;
 
-                case "quit":
-
-                case "exit":
+                case "quit" : case "exit":
                     System.out.println("Thanks for playing Soul Stepper");
                     return;
 
-                case "get":
+                case "get": case "acquire": case "obtain": case "receive": case "gain":
+                case "grab": case "pick up": case "take": case "pull": case "draw":
                     if (controller.currentLocation.items.contains(arrayChoice[1])) {
                         controller.removeItem(arrayChoice[1]);
                         soulStepper.addItem(arrayChoice[1]);
@@ -58,7 +59,7 @@ public class Game {
                         System.out.println("You can't do that");
                     }
                     break;
-                case "use":
+                case "use": case "utilize": case "make use of": case "operate":
                     if (soulStepper.inventory.contains(arrayChoice[1])) {
                         soulStepper.removeItem(arrayChoice[1]);
                         item.useItem(arrayChoice[1], soulStepper);

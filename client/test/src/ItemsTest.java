@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ItemsTest {
 
     @Test
-    void useItem() {
+    void useItem()throws InterruptedException {
         Location test = new Location("test");
         Player player = new Player("Andy", 20);
         Items items = new Items();
