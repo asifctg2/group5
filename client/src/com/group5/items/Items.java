@@ -15,7 +15,8 @@ public class Items {
                 TimeUnit.MILLISECONDS.sleep(1000);
                 System.out.println();
                 TimeUnit.MILLISECONDS.sleep(1000);
-                System.out.println("Soul Steppers health is now at " + player.getHealth());
+                player.currentHealth();
+                System.out.println();
                 break;
             case "mj jacket":
                 player.setHealth(300);
