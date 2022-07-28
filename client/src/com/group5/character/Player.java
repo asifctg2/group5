@@ -41,6 +41,10 @@ public class Player extends Character {
         this.health = this.getHealth() + randomInt(60, 70);
     }
 
+    public void currentHealth() {
+        System.out.println("Soulsteppers current health is " + this.getHealth());
+    }
+
     @Override
     public void dance(Character enemy, Character soulStepper) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
