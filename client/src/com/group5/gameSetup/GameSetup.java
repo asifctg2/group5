@@ -22,6 +22,7 @@ public class GameSetup {
     public Location currentLocation;
 
 
+
     public GameSetup() {
         currentLocation = mainStreet;
         mainStreet.addNextLocation("north", baseCircle);

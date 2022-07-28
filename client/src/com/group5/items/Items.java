@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Items {
 
+    // method to allow the player to use and item once it's in their inventory
+
     public void useItem(String item, Player player) throws InterruptedException {
 
         switch (item) {

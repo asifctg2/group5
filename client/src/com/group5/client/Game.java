@@ -12,6 +12,9 @@ import java.util.Scanner;
 
 
 public class Game {
+
+    // Array lists that allow the use to use different synonyms while playing the game.
+
     ArrayList<String> look = new ArrayList<>(Arrays.asList("look", "glance", "peep", "peek", "see", "view"));
     ArrayList<String> go = new ArrayList<>(Arrays.asList("go", "move", "proceed", "advance", "progress", "pass", "walk"));
     ArrayList<String> quit = new ArrayList<>(Arrays.asList("quit", "exit"));
@@ -20,8 +23,10 @@ public class Game {
     ArrayList<String> view = new ArrayList<>(Arrays.asList("check", "current"));
 
     public void play() throws InterruptedException {
+
+
         Instruction instruction = new Instruction();
-        //instruction.showInstruction();
+        instruction.showInstruction();
 
         GameSetup gameSetup = new GameSetup();
         Player soulStepper = new Player("SoulStepper", 100);
