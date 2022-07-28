@@ -1,14 +1,21 @@
 package com.group5.client;
-
 import com.group5.character.Player;
 import com.group5.gameSetup.GameSetup;
 import com.group5.gameSetup.Instruction;
 import com.group5.items.Items;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 
 public class Game {
+    ArrayList<String> look = new ArrayList<>(Arrays.asList("look", "glance", "peep", "peek", "see", "view"));
+    ArrayList<String> go = new ArrayList<>(Arrays.asList("go", "move", "proceed", "advance", "progress", "pass", "walk"));
+    ArrayList<String> quit = new ArrayList<>(Arrays.asList("quit", "exit"));
+    ArrayList<String> get = new ArrayList<>(Arrays.asList("get", "acquire", "obtain", "receive", "gain", "grab", "pick up", "take", "pull", "draw"));
+    ArrayList<String> use = new ArrayList<>(Arrays.asList("use", "utilize", "operate"));
+
     public void play() throws InterruptedException {
         Instruction instruction = new Instruction();
         instruction.showInstruction();
@@ -33,46 +40,44 @@ public class Game {
             }
             String choice = scanner.nextLine().toLowerCase();
             String[] arrayChoice = choice.split(" ", 2);
-            switch (arrayChoice[0]) {
-                case "look":
-                    gameSetup.look(gameSetup.currentLocation, arrayChoice[1]);
-                    break;
-
-                case "go":
-                    gameSetup.go(gameSetup.currentLocation, arrayChoice[1]);
-                    if (gameSetup.currentLocation.enemies.size() > 0) {
-                        if (gameSetup.currentLocation.enemies.contains(gameSetup.boss)){
-                            soulStepper.bossDance(gameSetup.currentLocation.enemies.get(0), soulStepper);
-                            gameSetup.currentLocation.enemies.remove(0);
-                        }
-                        soulStepper.dance(gameSetup.currentLocation.enemies.get(0), soulStepper);
+            if (look.contains(arrayChoice[0])) {
+                gameSetup.look(gameSetup.currentLocation, arrayChoice[1]);
+            }
+            else if (go.contains(arrayChoice[0])) {
+                gameSetup.go(gameSetup.currentLocation, arrayChoice[1]);
+                if (gameSetup.currentLocation.enemies.size() > 0) {
+                    if (gameSetup.currentLocation.enemies.contains(gameSetup.boss)) {
+                        soulStepper.bossDance(gameSetup.currentLocation.enemies.get(0), soulStepper);
                         gameSetup.currentLocation.enemies.remove(0);
                     }
-                    break;
+                    soulStepper.dance(gameSetup.currentLocation.enemies.get(0), soulStepper);
+                    gameSetup.currentLocation.enemies.remove(0);
+                }
+            }
 
-                case "quit":
+            else if (quit.contains(arrayChoice[0])) {
+                System.out.println("Thanks for playing Soul Stepper");
+                System.exit(0);
+            }
 
-                case "exit":
-                    System.out.println("Thanks for playing Soul Stepper");
-                    return;
+            else if (get.contains(arrayChoice[0])) {
+                if (gameSetup.currentLocation.items.contains(arrayChoice[1])) {
+                    gameSetup.removeItem(arrayChoice[1]);
+                    soulStepper.addItem(arrayChoice[1]);
+                } else {
+                    System.out.println("You can't do that");
+                }
+            }
 
-                case "get":
-                    if (gameSetup.currentLocation.items.contains(arrayChoice[1])) {
-                        gameSetup.removeItem(arrayChoice[1]);
-                        soulStepper.addItem(arrayChoice[1]);
-                    } else {
-                        System.out.println("You can't do that");
-                    }
-                    break;
-                case "use":
-                    if (soulStepper.inventory.contains(arrayChoice[1])) {
-                        soulStepper.removeItem(arrayChoice[1]);
-                        item.useItem(arrayChoice[1], soulStepper);
-                    }
-                    break;
+            else if (use.contains(arrayChoice[0])) {
+                if (soulStepper.inventory.contains(arrayChoice[1])) {
+                    soulStepper.removeItem(arrayChoice[1]);
+                    item.useItem(arrayChoice[1], soulStepper);
+                }
+            }
 
-                default:
-                    System.out.println("Invalid Command");
+            else {
+                System.out.println("Invalid Command");
             }
         }
 
