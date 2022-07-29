@@ -13,6 +13,7 @@ public class SwingDancer extends Character {
         super(name, health);
     }
 
+    //Time dialogue before combat of SwingDancer enemy character when engaging in combat with player
     @Override
     public void beginningDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -68,6 +69,7 @@ public class SwingDancer extends Character {
         System.out.println();
     }
 
+    //Time dialogue after combat of SwingDancer enemy character when engaging in combat with player
     @Override
     public void endingDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -95,7 +97,7 @@ public class SwingDancer extends Character {
         System.out.println();
     }
 
-
+//Random selection for Dance moves for combat of the SwingDancer character
     @Override
     public void dance(Character soulStepper, Character enemy) throws InterruptedException {
         List<String> danceMoves = new ArrayList<>(5);

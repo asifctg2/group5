@@ -6,6 +6,8 @@ import com.group5.location.Location;
 
 public class GameSetup {
 
+    //initializing on a field all the location and enemy's characters for some location
+
     Location mainStreet = new Location("Main Street");
     Location trebleParkWay = new Location("Treble Parkway");
     Location baseCircle = new Location("Base Circle");
@@ -21,7 +23,7 @@ public class GameSetup {
     public Character boss = new Boss("LoVibe the Boss", 100);
     public Location currentLocation;
 
-
+//object-oriented: adding location, description, item and enemy
     public GameSetup() {
         currentLocation = mainStreet;
         mainStreet.addNextLocation("north", baseCircle);
@@ -71,7 +73,7 @@ public class GameSetup {
 
 
     }
-
+//Look method would be able to let player kook on the direction they wish to go
     public void look(Location currentLocation, String direction) {
         if (currentLocation.nextLocation.keySet().contains(direction)) {
             System.out.println(currentLocation.nextLocation.get(direction).description);
@@ -82,6 +84,7 @@ public class GameSetup {
         }
     }
 
+    //go method would move the player across the rooms
     public void go(Location currentLocation, String direction) {
         if (currentLocation.nextLocation.keySet().contains(direction)) {
             this.currentLocation = currentLocation.nextLocation.get(direction);
@@ -91,7 +94,7 @@ public class GameSetup {
             System.out.println();
         }
     }
-
+//It would remove an item from array since with another method the Item would be placed on Inventory
     public void removeItem(String item) {
         this.currentLocation.items.remove(item);
     }

@@ -1,3 +1,4 @@
+//import com.group5.gameSetup.GameSetup;
 //import org.junit.Assert;
 //import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
@@ -8,7 +9,7 @@
 //
 //    @Test
 //    void look() {
-//        Controller c = new Controller();
+//        GameSetup c = new GameSetup();
 //        Location test = new Location("test");
 //        Location test1 = new Location("test1");
 //        Location test2 = new Location("test2");

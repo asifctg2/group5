@@ -2,6 +2,7 @@ package com.group5.character;
 
 import java.util.Random;
 
+//Character class is abstract and every character extends Character class
 public abstract class Character {
 
     String name;

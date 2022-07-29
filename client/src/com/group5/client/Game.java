@@ -30,10 +30,12 @@ public class Game {
             System.out.println("\033[1;35m");
             System.out.println("Where would you like to go? ");
             System.out.println("\033[0m");
-            System.out.print("> ");
-
             System.out.println();
             soulStepper.showInventory();
+            System.out.println();
+            System.out.print("> ");
+
+
 
             if (gameSetup.currentLocation.items.size() > 0) {
                 gameSetup.currentLocation.getItems();

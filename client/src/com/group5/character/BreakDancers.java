@@ -12,7 +12,7 @@ public class BreakDancers extends Character {
     public BreakDancers(String name, int health) {
         super(name, health);
     }
-
+    //Time dialogue before combat of BreakDancer enemy character when engaging in combat with player
     @Override
     public void beginningDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -73,7 +73,7 @@ public class BreakDancers extends Character {
         System.out.println();
         System.out.println();
     }
-
+    //Time dialogue after combat of BreakDancer enemy character when engaging in combat with player
     @Override
     public void endingDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -101,7 +101,7 @@ public class BreakDancers extends Character {
         System.out.println();
     }
 
-
+//Random selection for Dance moves for combat of the BreakDancer character
     @Override
     public void dance(Character soulStepper, Character enemy) throws InterruptedException {
         List<String> danceMoves = new ArrayList<>(5);

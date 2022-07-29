@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Items {
 
+    //would let player use health kit and mj jacket to increase his health
     public void useItem(String item, Player player) throws InterruptedException {
 
         switch (item) {
