@@ -35,7 +35,7 @@ public class Instruction {
         TimeUnit.MILLISECONDS.sleep(1500);
         System.out.println("\033[1;35m");
         System.out.println("Commands: \n To move = go [direction] \n To get items = get [item] \n To use items = use [item] " +
-                "\n To look = look [direction] \n Exit com.group5.client.Game = quit");
+                "\n To look = look [direction] \n Exit Game = quit \n To save = save game \n To load = load game ");
         System.out.println("\033[0m");
         TimeUnit.MILLISECONDS.sleep(1500);
         System.out.println();
