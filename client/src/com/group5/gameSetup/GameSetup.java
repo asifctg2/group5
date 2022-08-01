@@ -23,6 +23,7 @@ public class GameSetup {
     public Character boss = new Boss("LoVibe the Boss", 100);
     public Location currentLocation;
 
+
 //object-oriented: adding location, description, item and enemy
     public GameSetup() {
         currentLocation = mainStreet;

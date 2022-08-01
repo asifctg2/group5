@@ -8,6 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Player extends Character {
 
+    // players inventory upon initialization.
+
     public ArrayList<String> inventory = new ArrayList<>();
 
     public Player(String name, int health) {
@@ -24,22 +26,37 @@ public class Player extends Character {
 
     }
 
+    // adds item to the players inventory
 
     public void addItem(String item){
         inventory.add(item);
     }
 
+    // removes item from the players inventory
+
     public void removeItem(String item){
         inventory.remove(item);
     }
+
+    // shows the players inventory
 
     public void showInventory() {
         System.out.println("Your inventory: " + inventory.toString());
     }
 
+    // allows player to use the health kit item once in inventory
+
     public void useHealthKit() {
         this.health = this.getHealth() + randomInt(60, 70);
     }
+
+    // outputs a string with the players current health
+
+    public void currentHealth() {
+        System.out.println("Soulsteppers current health is " + this.getHealth());
+    }
+
+    // players dance method which takes the current enemy and the current player object
 
     @Override
     public void dance(Character enemy, Character soulStepper) throws InterruptedException {
@@ -127,6 +144,8 @@ public class Player extends Character {
             }
         }
     }
+
+    // player dance method created to be used specifically against the boss
 
     public void bossDance(Character enemy, Character soulStepper) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
