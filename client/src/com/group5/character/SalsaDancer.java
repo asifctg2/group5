@@ -13,6 +13,7 @@ public class SalsaDancer extends Character {
         super(name, health);
     }
 
+    //Time dialogue before combat of SalsaDancer enemy character when engaging in combat with player
     @Override
     public void beginningDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -56,6 +57,7 @@ public class SalsaDancer extends Character {
         System.out.println();
     }
 
+    //Time dialogue after combat of BreakDancer enemy character when engaging in combat with player
     @Override
     public void endingDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -80,7 +82,7 @@ public class SalsaDancer extends Character {
         System.out.println();
     }
 
-
+//Random selection for Dance moves for combat of the CrunkDancer character
     @Override
     public void dance(Character soulStepper, Character enemy) {
         List<String> danceMoves = new ArrayList<>(5);

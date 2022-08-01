@@ -34,6 +34,15 @@ public class Game {
         Items item = new Items();
         while (true) {
             System.out.println("You are now at " + gameSetup.currentLocation.getName());
+
+
+            System.out.println("\033[1;35m");
+            System.out.println("Where would you like to go? ");
+            System.out.println("\033[0m");
+            System.out.println();
+            soulStepper.showInventory();
+            System.out.println();
+
             System.out.println();
             soulStepper.showInventory();
             System.out.println();

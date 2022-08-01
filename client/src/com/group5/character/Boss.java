@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+//Boss is a character on the game
 public class Boss extends Character {
 
 
@@ -13,11 +14,13 @@ public class Boss extends Character {
         super(name, health);
     }
 
+    //different int when decreasing health by an attack from other characters
     @Override
     public void decreaseHealth() {
         this.health = health - randomInt(10, 25);
     }
 
+    //Time dialogue before combat of Boss character when engaging in combat with player
     @Override
     public void beginningDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -67,7 +70,7 @@ public class Boss extends Character {
         System.out.println();
         System.out.println();
     }
-
+//    //Time dialogue after combat of Boss character when engaging in combat with player
     @Override
     public void endingDialogue() throws InterruptedException {
         System.out.println(".....");
@@ -99,7 +102,7 @@ public class Boss extends Character {
         System.out.println("GAME OVER");
         System.exit(0);
     }
-
+//Random selection for Dance moves for combat of the Boss character
     @Override
     public void dance(Character soulStepper, Character enemy) {
         List<String> danceMoves = new ArrayList<>(5);
