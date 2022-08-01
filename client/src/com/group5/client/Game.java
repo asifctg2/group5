@@ -4,12 +4,13 @@ import com.group5.character.Player;
 import com.group5.gameSetup.GameSetup;
 import com.group5.gameSetup.Instruction;
 import com.group5.items.Items;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.Scanner;
-
+import java.io.PrintWriter;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
+import java.io.FileWriter;
+import com.google.gson.Gson;
 
 public class Game {
 
@@ -24,10 +25,8 @@ public class Game {
 
     public void play() throws InterruptedException {
 
-
         Instruction instruction = new Instruction();
         instruction.showInstruction();
-
         GameSetup gameSetup = new GameSetup();
         Player soulStepper = new Player("SoulStepper", 100);
         Scanner scanner = new Scanner(System.in);
@@ -35,24 +34,13 @@ public class Game {
         while (true) {
             System.out.println("You are now at " + gameSetup.currentLocation.getName());
 
-
             System.out.println("\033[1;35m");
             System.out.println("Where would you like to go? ");
             System.out.println("\033[0m");
             System.out.println();
             soulStepper.showInventory();
             System.out.println();
-
-            System.out.println();
-            soulStepper.showInventory();
-            System.out.println();
-            System.out.print("\033[1;35m");
-            System.out.println("Where would you like to go? ");
-            System.out.print("\033[0m");
-            System.out.println();
             System.out.print("> ");
-
-
 
             if (gameSetup.currentLocation.items.size() > 0) {
                 gameSetup.currentLocation.getItems();
@@ -86,23 +74,52 @@ public class Game {
                     soulStepper.removeItem(arrayChoice[1]);
                     item.useItem(arrayChoice[1], soulStepper);
                 }
-
             } else if (view.contains(arrayChoice[0])) {
                 switch (arrayChoice[1]) {
                     case "health":
                         soulStepper.currentHealth();
                         System.out.println();
                     case "map":
-
                 }
+            } else if (arrayChoice[0].equals("save")){
+                String path = "saveGame.json";
 
-            } else{
+                Map<String, Object> map = new HashMap<>();
+                map.put("currentLocation",gameSetup.currentLocation.getName());
+                map.put("currentHealth", soulStepper.getHealth());
+                map.put("currentInventory", soulStepper.inventory);
+
+                try (PrintWriter out = new PrintWriter(new FileWriter(path))) {
+                    Gson gson = new Gson();
+                    String jsonString = gson.toJson(map);
+                    out.write(jsonString);
+                    System.out.println("Game Saved!");
+                } catch (Exception e) {
+                    System.out.println("There was an error saving your game!");
+                    e.printStackTrace();
+                }
+            } else if (arrayChoice[0].equals("load")){
+
+                try (Reader in = Files.newBufferedReader(Paths.get("saveGame.json"))) {
+                    Gson gson = new Gson();
+                    Map<String,Object> map = gson.fromJson(in, Map.class);
+
+                    String currentLocation = map.get("currentLocation") != null ? (String) map.get("currentLocation") : "Base Circle";
+                    Integer health = map.get("currentHeath") != null ? (Integer) map.get("currentLocation") : 100;
+                    ArrayList inv = (ArrayList) map.get("currentInventory");
+                    gameSetup.currentLocation = gameSetup.ref.get(currentLocation);
+                    soulStepper.setHealth(health);
+                    for(Object invItem : inv)
+                        soulStepper.addItem((String) invItem);
+                    System.out.println("Game Loaded!");
+                } catch (Exception e) {
+                    System.out.println("There was an error saving your game!");
+                    e.printStackTrace();
+                }
+            }
+            else{
                     System.out.println("Invalid Command");
                 }
             }
-
-
         }
-
-
     }
